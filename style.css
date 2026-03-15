@@ -1,0 +1,302 @@
+
+
+/* ── GENERAL ── */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d1a1f;
+  color: #d0dde0;
+  min-height: 100vh;
+}
+
+/* ── NAVIGATION ── */
+.barre-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 2rem;
+  background: #111f24;
+  border-bottom: 1px solid #1e3a42;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo .icone {
+  width: 38px;
+  height: 38px;
+  background: #3a5a66;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.logo span {
+  font-size: 0.95rem;
+  color: #7a9ba3;
+}
+
+.barre-recherche {
+  margin-left: 1rem;
+  width: 220px;
+  padding: 0.45rem 1.2rem;
+  background: #0d1a1f;
+  border: 1px solid #1e3a42;
+  border-radius: 999px;
+  color: #d0dde0;
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.bouton-catalogue {
+  padding: 0.4rem 1.2rem;
+  background: #3a5a66;
+  border: 1px solid #1e3a42;
+  border-radius: 999px;
+  color: #d0dde0;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bouton-catalogue:hover { background: #4a7a87; }
+body.clair .bouton-catalogue { background: #7a9ba3; color: #0d1a1f; }
+
+
+.bouton-mode {
+  margin-left: auto;
+  padding: 0.4rem 1.2rem;
+  background: #3a5a66;
+  border: 1px solid #1e3a42;
+  border-radius: 999px;
+  color: #d0dde0;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+
+
+
+/* ── CONTENU ── */
+.contenu { padding: 2rem 2.5rem; }
+
+.titre-page {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.soulignement {
+  width: 80px;
+  height: 2px;
+  background: #7a9ba3;
+  margin-bottom: 2rem;
+}
+
+/* ── CATALOGUE ── */
+.disposition {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.menu-lateral {
+  width: 200px;
+  flex-shrink: 0;
+  background: #111f24;
+  border-radius: 10px;
+  padding: 1.2rem;
+  border: 1px solid #1e3a42;
+}
+
+.menu-titre {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #1e3a42;
+}
+
+.menu-sous-titre {
+  font-size: 0.8rem;
+  color: #7a9ba3;
+  margin: 1rem 0 0.6rem;
+}
+
+.liste-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.categorie {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  color: #7a9ba3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.categorie:hover { background: #1e3a42; color: #d0dde0; }
+.categorie.active { background: #1e3a42; color: #d0dde0; }
+
+.point {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── GRILLE CATALOGUE ── */
+.grille-films {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* ── CARTE FILM ── */
+.carte-film {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  border: 1px solid #1e3a42;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.carte-film:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.affiche {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+.titre-film {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1rem 0.7rem 0.6rem;
+  background: linear-gradient(to top, rgba(13,26,31,0.9), transparent);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #d0dde0;
+}
+
+/* ── PAGE FILM ── */
+.page-film {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.colonne-gauche {
+  width: 350px;
+  flex-shrink: 0;
+  background: #111f24;
+  border-radius: 10px;
+  padding: 1.2rem;
+  border: 1px solid #1e3a42;
+}
+
+.nom-film {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.affiche-film {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: fill;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.infos-film {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #7a9ba3;
+}
+
+.info-label {
+  font-weight: 500;
+  color: #d0dde0;
+}
+
+.colonne-droite { flex: 1; }
+
+.sous-titre {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.texte {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #7a9ba3;
+  margin-bottom: 2rem;
+}
+
+/* ── ACCUEIL ── */
+.titre-section {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #7a9ba3;
+  display: inline-block;
+}
+
+.rangee-films {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #3a5a66 #0d1a1f;
+}
+
+.rangee-films .carte-film {
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.rangee-films .titre-film { font-size: 1rem; }
+
+/* ── MODE CLAIR ── */
+body.clair { background: #e8f0f2; color: #0d1a1f; }
+body.clair .barre-nav { background: #d0dde0; border-color: #b0c4cc; }
+body.clair .barre-recherche { background: #e8f0f2; color: #0d1a1f; border-color: #b0c4cc; }
+body.clair .logo span { color: #3a5a66; }
+body.clair .bouton-mode { background: #7a9ba3; color: #0d1a1f; }
+body.clair .menu-lateral { background: #d0dde0; border-color: #b0c4cc; }
+body.clair .colonne-gauche { background: #d0dde0; border-color: #b0c4cc; }
+body.clair .categorie { color: #3a5a66; }
+body.clair .categorie:hover { background: #b0c4cc; color: #0d1a1f; }
+body.clair .categorie.active { background: #b0c4cc; color: #0d1a1f; }
+body.clair .infos-film { color: #3a5a66; }
+body.clair .texte { color: #3a5a66; }
+body.clair .carte-film { border-color: #b0c4cc; }
